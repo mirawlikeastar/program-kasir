@@ -38,3 +38,38 @@ cout << "## Program C++ Aplikasi Kasir ##" << endl;
         cout << endl;
     }
     cout << endl;
+cout << "###---------------------------------------###" << endl;
+    cout << "        Struk Mini Market ILKOOM           " << endl;
+    cout << "###---------------------------------------###" << endl;
+    cout << "No Barang      Jumlah  Harga Satuan  Sub Total" << endl;
+
+    for (int i = 0; i < jumlahTotalBarang; i++) {
+        cout << left << setw(12) << namaBarang[i];
+        cout << right << setw(4) << jumlahBarang[i];
+        cout << setw(8) << hargaBarang[i];
+        cout << setw(15) << jumlahBarang[i] * hargaBarang[i];
+        cout << endl;
+        totalHarga += (jumlahBarang[i] * hargaBarang[i]);
+    }
+
+    cout << "---------------------------------------------" << endl;
+    cout << "Total harga : Rp. " << totalHarga << endl << endl;
+
+    do {
+        cout << "Jumlah Bayar: Rp. ";
+        cin >> jumlahBayar;
+        cout << endl;
+
+        if (jumlahBayar < totalHarga) {
+            cout << "Maaf, uang anda kurang. Mohon lakukan ulang pembayaran" << endl;
+        }
+    } while (jumlahBayar < totalHarga);
+
+    cout << "Kembalian    : Rp." << jumlahBayar - totalHarga << endl;
+    cout << endl;
+    cout << "####-----------------------------------------------####" << endl;
+    cout << "####   Terimakasih sudah berbelanja, datang kembali  ####" << endl;
+    cout << "####-----------------------------------------------####" << endl;
+
+    return 0;
+}
